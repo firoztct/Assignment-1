@@ -38,9 +38,16 @@ post_data = [
 
 # Your Code Start from here
 
+for data in post_data:
+    title = data.get("title").strip().split(" ")
 
-
-
-# Your code ends here
+    if len(title) >= 3:
+        title = title[:3]
+    else:
+        title = title
+    slug = '-'.join(title)
+    data.update(({"slug":slug}))
 
 print(post_data[4])
+
+# Your code ends here
